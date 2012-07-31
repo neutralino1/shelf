@@ -1,0 +1,18 @@
+<h1>Shelf</h1>
+<div id="main">
+	<h2>Records</h2>
+<ul class="shelf">
+	<% @albums.each do |album| %>
+	<li>
+		<div>
+			<div class="shelf-item album"><%= image_tag album.artwork, :class => 'sleeve' %>
+				<div class="album-name"><%= album.title %></div>
+				<div class="artist-name"><%= album.artist %></div>
+			</div>
+		</div>
+	</li>
+	<% end %>
+</ul>
+<div class="fclear"></div>
+<a href="#" class="btn primary" id="view-your-shelf">View your record shelf &rarr;</a>
+</div>

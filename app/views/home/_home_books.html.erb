@@ -1,0 +1,20 @@
+<h2>Books</h2>
+<ul class="shelf">
+	<% @books.each do |b| %>
+	<li>
+		<div>
+			<div class="shelf-item book"><%= image_tag b.image_url, :class => 'sleeve' %>
+				<div class="album-name"><%= b.title %></div>
+				<div class="artist-name">
+					<% if b.authors.author.kind_of?(Array) %>
+					<%= b.authors.author[0].name %>
+					<% else %>
+					<%= b.authors.author.name %>
+					<% end %></div>
+			</div>
+		
+		</div>
+	</li>
+	<% end %>
+</ul>
+<div class="fclear"></div>
