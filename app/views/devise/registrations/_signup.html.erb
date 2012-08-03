@@ -1,0 +1,14 @@
+<div id="signup-box">
+	<%= form_for(@user, :as => :user, :url => user_registration_path(:user), :html => {:id => "signup"}) do |f| %>
+		Enter your
+		<%= f.email_field :email, :placeholder => 'email' %>	
+		, choose a
+		<%= f.text_field :username, :placeholder => 'user name' %>
+		and a
+		<%= f.password_field :password, :placeholder => 'password' %>
+		to
+		<%= f.submit "save your shelf &rarr;".html_safe, :class => "btn primary" %>
+		<div id="empty" class="notice">Please fill in all fields.</div>
+	<% end %>
+</div>
+<div class="fclear"></div>

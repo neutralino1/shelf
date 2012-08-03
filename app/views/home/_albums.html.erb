@@ -1,0 +1,14 @@
+<h2>Records</h2>
+<ul class="shelf">
+	<% @albums.each do |album| %>
+	<li>
+		<div>
+			<div class="shelf-item album"><%= image_tag album.artwork, :class => 'sleeve' %>
+				<div class="album-name"><%= album.title %></div>
+				<div class="artist-name"><%= album.artist %></div>
+			</div>
+		</div>
+	</li>
+	<% end %>
+</ul>
+<div class="fclear"></div>

@@ -1,0 +1,10 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :id => "signup") do |f| %>
+	Enter your
+	<%= f.email_field :email, nil, :placeholder => 'email' %>	
+	, choose a
+	<%= f.text_field :username, nil, :placeholder => 'user name' %>
+	and a
+	<%= f.password_field :password, nil, :placeholder => 'password' %>
+	to
+	<%= f. "save your shelf &rarr;".html_safe, :class => "btn primary" %>
+<% end %>
