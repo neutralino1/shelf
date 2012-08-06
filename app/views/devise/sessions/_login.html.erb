@@ -1,0 +1,12 @@
+<div id="login-box">
+	<%= form_for(@user, :as => :user, :url => session_path(:user), :html => {:id => "login"}) do |f| %>
+		Enter your
+		<%= f.email_field :email, :placeholder => 'email' %>
+		, your
+		<%= f.password_field :password, :placeholder => 'password' %>
+		and
+		<%= f.submit "see your shelf &rarr;".html_safe, :class => "btn primary" %>
+		<div id="empty" class="notice">Please fill in all fields.</div>
+	<% end %>
+</div>
+<div class="fclear"></div>
