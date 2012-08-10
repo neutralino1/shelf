@@ -1,0 +1,7 @@
+<% content_for :javascript_includes do %>
+ 	<%= javascript_include_tag "user.js" %>
+<% end %>
+
+<%= render :partial => 'devise/sessions/signout' %>
+
+<%= render :partial => 'home/albums' %>
