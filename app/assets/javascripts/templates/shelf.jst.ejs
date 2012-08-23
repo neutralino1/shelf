@@ -1,0 +1,22 @@
+<h2>Records</h2>
+<ul class="shelf">
+	<% _.each(albums, function(album){ %>
+		<li>
+			<div>
+				<div class="shelf-item album">
+					<img src="<%= album.artwork %>" class='sleeve'>
+					<div class="album-name">
+						<%= album.title %>
+					</div>
+					<div class="artist-name">
+						<%= album.artist %>
+					</div>
+					<div class="release-date">
+						<%= album.year %>
+					</div>
+				</div>
+			</div>
+		</li>
+	<% }); %>
+</ul>
+<div class="fclear"></div>
