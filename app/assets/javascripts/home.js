@@ -26,7 +26,6 @@ Shelf.GetYours = {
 	process:function(data){
 		Shelf.SignUp.show();
 		Shelf.AlbumShelf.populate(data);
-		Shelf.Logo.loading(false);
 	}
 };
 

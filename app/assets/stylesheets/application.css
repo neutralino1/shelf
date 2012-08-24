@@ -10,12 +10,15 @@
  *
  *= require_self
  *= require_tree .
-*/
+ *= require jquery.ui.all
+ */
+
 body{
 	font-family: Arial;
 	background-image: url('https://duv2rxyjq20ja.cloudfront.net/wlcom1/backgrounds/wood.jpg');
 	background-repeat:no-repeat;
 	background-attachment: fixed;
+	font-family:'Helvetica Neue', 'Arial';
 }
 
 a{
@@ -29,6 +32,17 @@ h1 {
 	text-align:center;
 }
 
+.pulsate{
+	-webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+}
+
+@-webkit-keyframes pulsate {
+    0% {opacity: 0.5;}
+    50% {opacity: 0.2;}
+    100% {opacity: 0.5;}
+}
+
 h2 {
 	font-family: Courgette;
 	color:rgba(0,0,0,.6);
@@ -36,10 +50,18 @@ h2 {
 	text-align:center;
 }
 
+div#album-shelf h3 {
+	font-family: Courgette;
+	color:rgba(0,0,0,.6);
+//	font-size:30px;
+	text-align:center;
+}
+
 div#main {
 	width:1200px;
 	margin:0px auto;
 //	border:1px solid black;
+	position: relative;
 }
 
 ul{
@@ -122,20 +144,120 @@ div.artist-name{
 
 }
 .primary{
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);
-	color: rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	color: rgba(255, 255, 255, 0.7);
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	background-image: -webkit-linear-gradient(top,#2990E0,#1B75BB);
-	border-radius: 5px;
-	font-size: 22px;
 	font-weight: bold;
 	line-height: normal;
-	padding: 9px 14px;
+	font-family:"Courgette";
 }
-#view-your-shelf{
+
+.negative{
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	color: rgba(255, 255, 255, 0.7);
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	background-image: -webkit-linear-gradient(#74747F, #5D5D66);
+	//font-weight: bold;
+	font-size:14px;
+	line-height: normal;
+	font-family:"Courgette";
+}
+
+form#get-yours, form#signup, form#login{
+	margin:30px 0;
 	float:right;
+	font-family: "Courgette";
+	font-size:22px;
+	color:rgba(0,0,0,.7);
+	margin-right:10px;
+}
+
+#signup input[type=text], #signup input[type=password], #signup input[type=email] {
+	width:120px;
+}
+
+#get-yours input[type=text]{
+	width:227px;
+}
+
+form#login input[type=email], form#login input[type=password] {
+	width:200px;
+}
+
+form#signup, form#login {
+	display:none;
+}
+
+div#empty {
+	display:none;
+	text-align:right;
+}
+
+.notice {
+	font-family:"Arial";
+	font-size:14px;
+	color:rgba(255,255,255,.9);
+}
+
+#logout, input#login {
+	position:absolute;
+	top:0;
+	right:0;
+	margin-right:12px;
+}
+
+input {
+	padding: 9px 14px;
+	border-radius: 5px;
+	font-size:22px;
+	border:1px solid rgba(0,0,0,.1);
+	background-color: rgba(0,0,0,0);
+	font-family:"Courgette";
+}
+
+input:hover{
+	background-color: rgba(0,0,0,.1)
+}
+
+input:focus{
+	background: rgba(27, 117, 187, 0.1);
+	border-color: rgba(27, 117, 187, 0.1);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(27, 117, 187, 0.4);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(27,117,187,0.4);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(27, 117, 187, 0.4);
 }
 
 .fclear{
 	clear:both;
+}
+
+div#control-panel {
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	display: block;
+	width:250px;
+	padding:30px 10px;
+	background-color: rgba(48, 48, 56, .7);
+	color:rgba(255, 255, 255, .8);
+//	border-right: 1px solid rgba(255, 255, 255, .2);
+	font-size:.9em;
+	//background-image: url('http://www.wunderkit.com/images/patterns/lines.jpg');
+}
+
+div#control-panel h3{
+		text-align:center;
+}
+
+div#handle {
+	width:30px;
+	position: fixed;
+	left:270px;
+	top:0;
+	bottom: 0;
+	background-color: rgba(48, 48, 56, .7);
+	color:rgba(255, 255, 255, .8);
+	border-right: 1px solid rgba(255, 255, 255, .2);
 }

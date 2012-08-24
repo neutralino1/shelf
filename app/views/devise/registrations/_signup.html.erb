@@ -1,5 +1,6 @@
 <div id="signup-box">
 	<%= form_for(@user, :as => :user, :url => user_registration_path(:user), :html => {:id => "signup"}) do |f| %>
+		<%= f.hidden_field :lastfm_username %>
 		Enter your
 		<%= f.email_field :email, :placeholder => 'email' %>	
 		, choose a

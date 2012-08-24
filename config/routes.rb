@@ -1,7 +1,24 @@
 Shelfi::Application.routes.draw do
+  devise_for :users, :controllers => {:registrations => "users"}
   # The priority is based upon order of creation:
   # first created -> highest priority.
   root :to => "home#index"
+  match 'shelf' => "home#shelf", :method => :post
+
+    #post 'users', :to => "users#create"#, :method => :post
+  
+#  devise_scope :session do
+  
+ # end
+  
+  match 'users/albums' => 'albums#index'
+
+  devise_scope :user do
+    match 'log_out' => 'sessions#destroy', :method => :delete
+    #match 'users/albums' => "users#albums"
+    match ':username' => 'users#show'
+  end
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

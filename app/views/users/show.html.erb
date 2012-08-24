@@ -1,7 +1,24 @@
+<%= render :partial => 'devise/sessions/signout' %>
+
+<div id="album-shelf">
+</div>
+
+<div id="control-panel">
+	<h3>Shelf settings</h3>
+	Sort by:
+	<ul>
+		<li>
+		<%= radio_button_tag 'order', "created_at", true, :id => 'most_played' %> 
+		<%= label_tag 'most_played', 'most played' %>
+		</li>
+		<li>
+		<%= radio_button_tag 'order', "release_date", false, :id => 'release_date' %>
+		<%= label_tag 'release_date', 'released date' %>
+		</li>
+	</ul>
+</div>
+<div id="handle">a</div>
+
 <% content_for :javascript_includes do %>
  	<%= javascript_include_tag "user.js" %>
 <% end %>
-
-<%= render :partial => 'devise/sessions/signout' %>
-
-<%= render :partial => 'home/albums' %>

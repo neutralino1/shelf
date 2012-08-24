@@ -1,14 +1,37 @@
-<h2>Records</h2>
-<ul class="shelf">
-	<% @albums.each do |album| %>
-	<li>
-		<div>
-			<div class="shelf-item album"><%= image_tag album.artwork, :class => 'sleeve' %>
-				<div class="album-name"><%= album.title %></div>
-				<div class="artist-name"><%= album.artist %></div>
-			</div>
-		</div>
-	</li>
+
+	<h2>Records</h2>
+	<% if @albums.empty? %>
+	<div class="notice">
+		No albums yet, wait for synchronization.
+	</div>
+	<% else %>
+	<% if @order == "release_date" %>
+		<h3><%= @albums[0].release_date.year %></h3>
 	<% end %>
-</ul>
-<div class="fclear"></div>
+	<ul class="shelf">
+		<% @albums.each do |album| %>
+			<li>
+				<div>
+					<div class="shelf-item album"><%= image_tag album.artwork, :class => 'sleeve' %>
+						<div class="album-name">
+							<%= album.title %>
+						</div>
+						<div class="artist-name">
+							<%= album.artist %>
+						</div>
+						<div class="release-date">
+							<%= album.release_date.year if  album.release_date %>
+						</div>
+					</div>
+				</div>
+			</li>
+			<% if @order == "release_date" and @albums.last != album and @albums[@albums.index(album)+1].release_date and album.release_date and @albums[@albums.index(album)+1].release_date.year != album.release_date.year %>
+				</ul>
+				<div class="fclear"></div>
+				<h3><%= @albums[@albums.index(album)+1].release_date.year %></h3>
+				<ul class="shelf">
+			<% end %>
+		<% end %>
+	</ul>
+	<% end %>
+	<div class="fclear"></div>

@@ -7,24 +7,30 @@ LASTFM_API_KEY = 'cc29f9738ebdf3a626c29500a0f3f88b'
 LASTFM_API_SECRET = 'cb4b8e7e87face4d833b9ac4fd26c92c'
 
 class Album < ActiveRecord::Base
-	attr_accessible :title, :artist, :url, :service, :artwork
+	attr_accessible :title, :artist, :url, :service, :artwork, :release_date
+
+	has_and_belongs_to_many :users
+
+	def self.get_lastfm_albums(username, limit)
+		lastfm = Lastfm.new(LASTFM_API_KEY, LASTFM_API_SECRET)
+		lastfm_albums = lastfm.user.get_top_albums(:user => username, :limit => limit)
+		return lastfm_albums.map do |album|
+			Album.new(
+				:title => album['name'], 
+				:artist => album['artist']['name'], 
+				:service => 'lastfm',
+				:artwork => album['image'][2]['content'],
+				:url =>album['url'])
+		end
+	end
 
 	def self.sync_lastfm
-		lastfm = Lastfm.new(LASTFM_API_KEY, LASTFM_API_SECRET)
-	#token = lastfm.auth.get_token
-	#open 'http://www.last.fm/api/auth/?api_key=xxxxxxxxxxx&token=xxxxxxxx' and grant the application
-	#lastfm.session = lastfm.auth.get_session(:token => token)['key']
-		lastfm_albums = lastfm.user.get_top_albums(:user => 'bluesmanu', :limit => '200')
-		lastfm_albums.each do |album|
+		albums = get_lastfm_albums
+		albums.each do |album|
 			exist = Album.where(['title LIKE ? AND artist LIKE ?',"%#{album['name']}",
 				"%#{album['artist']['name']}%"])
 			if exist.empty?
-				Album.create(
-					:title => album['name'], 
-					:artist => album['artist']['name'], 
-					:service => 'lastfm',
-					:artwork => album['image'][2]['content'],
-					:url =>album['url'])
+				album.save!
 			end
 		end
 	end
