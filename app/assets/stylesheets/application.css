@@ -58,7 +58,7 @@ div#album-shelf h3 {
 }
 
 div#main {
-	width:1200px;
+	width:100%;
 	margin:0px auto;
 //	border:1px solid black;
 	position: relative;

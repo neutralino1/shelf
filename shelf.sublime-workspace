@@ -3,230 +3,10 @@
 	{
 		"selected_items":
 		[
-			[
-				"change",
-				"change"
-			],
-			[
-				"Settings",
-				"SettingsView"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"init",
-				"initialize"
-			],
-			[
-				"logoview",
-				"logoview"
-			],
-			[
-				"Logo",
-				"LogoView"
-			],
-			[
-				"Shel",
-				"ShelfView"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"scro",
-				"scrollTo"
-			],
-			[
-				"na",
-				"navBarMe"
-			],
-			[
-				"back",
-				"Background"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"f",
-				"font-size"
-			],
-			[
-				"borde",
-				"border-radius"
-			],
-			[
-				"border-r",
-				"border-right"
-			],
-			[
-				"syn",
-				"sync_albums"
-			],
-			[
-				"fu",
-				"function"
-			],
-			[
-				"us",
-				"users_albums"
-			],
-			[
-				"user",
-				"users_albums"
-			],
-			[
-				"slide",
-				"slideDown"
-			],
-			[
-				"Log",
-				"LogIn"
-			],
-			[
-				"this",
-				"this"
-			],
-			[
-				"form",
-				"form"
-			],
-			[
-				"background",
-				"background-color"
-			],
-			[
-				"margin-",
-				"margin-bottom"
-			],
-			[
-				"re",
-				"release"
-			],
-			[
-				"whe",
-				"where"
-			],
-			[
-				"padding",
-				"padding-bottom"
-			],
-			[
-				"r",
-				"r	attr_reader .."
-			],
-			[
-				"u",
-				"u"
-			],
-			[
-				"backgro",
-				"background-color"
-			],
-			[
-				"to",
-				"top_albums"
-			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 2252,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/users/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 570,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/templates/shelf.jst.ejs",
-			"settings":
-			{
-				"buffer_size": 456,
-				"line_ending": "Unix",
-				"name": "aaa"
-			}
-		},
-		{
-			"contents": "class UsersController < Devise::RegistrationsController\n	def create\n		user = User.new(params[:user])\n		if user.save!\n			sign_in(:user, user)\n			redirect_to root_path\n		else\n			raise \"fuck\"\n		end\n	end\n\n	def show\n#		@albums = current_user.albums.find(:all, :limit => 48) #sync_albums\n		#@albums = Album.find(:all, :order => 'RAND()', :limit => 16)\n	end\n\n	def albums\n		if params[:sync] == \"1\"\n			limit = current_user.albums.count > 0 ? 200 : 32\n			current_user.sync_albums(limit)\n		end\n		@order = params[:order] ? params[:order] : 'created_at'\n		@albums = current_user.albums.find(:all, :limit => 1000, :order => \"#{@order} desc\")\n		render :partial => 'home/albums'\n	end\n\nend",
-			"file": "app/controllers/users_controller.rb",
-			"file_size": 754,
-			"file_write_time": 1345733057000000,
-			"settings":
-			{
-				"buffer_size": 672,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 519,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/albums_controller.rb",
-			"settings":
-			{
-				"buffer_size": 128,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/home/_albums.html.erb",
-			"settings":
-			{
-				"buffer_size": 1080,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/application.css",
-			"settings":
-			{
-				"buffer_size": 4967,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 947,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/application.js",
-			"settings":
-			{
-				"buffer_size": 1509,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/user.js",
-			"settings":
-			{
-				"buffer_size": 2508,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -252,62 +32,10 @@
 	},
 	"file_history":
 	[
-		"/home/emanuel/Code/shelfi/app/assets/templates/greet.jst.ejs",
-		"/home/emanuel/Code/shelfi/app/assets/greet.txt",
-		"/home/emanuel/Dropbox/turlay.net/font-awesome.css",
-		"/home/emanuel/Dropbox/turlay.net/style.css",
-		"/home/emanuel/Dropbox/turlay.net/main.js",
-		"/home/emanuel/Dropbox/turlay.net/jquery.scrollto.js",
-		"/home/emanuel/Dropbox/turlay.net/index.html",
-		"/home/emanuel/Dropbox/turlay.net/jquery.scrollto.min.js",
-		"/home/emanuel/Dropbox/Festiverbant/www/index.php",
-		"/home/emanuel/Code/shelfi/app/assets/stylesheets/application.css",
-		"/home/emanuel/Code/shelfi/app/assets/javascripts/user.js",
-		"/home/emanuel/Code/shelfi/app/controllers/users_controller.rb",
-		"/home/emanuel/Code/shelfi/app/models/user.rb",
-		"/home/emanuel/Code/shelfi/app/views/home/index.html.erb",
-		"/home/emanuel/Code/shelfi/app/views/home/_albums.html.erb",
-		"/home/emanuel/Code/shelfi/app/views/users/show.html.erb",
-		"/home/emanuel/Code/shelfi/app/assets/javascripts/application.js",
-		"/home/emanuel/Code/shelfi/config/routes.rb",
-		"/home/emanuel/Code/shelfi/Gemfile",
-		"/home/emanuel/Code/shelfi/app/models/album.rb",
-		"/home/emanuel/Code/shelfi/db/migrate/20120817113803_add_release_date_to_albums.rb",
-		"/home/emanuel/Code/shelfi/app/controllers/home_controller.rb",
-		"/home/emanuel/Code/shelfi/app/assets/javascripts/home.js",
-		"/home/emanuel/Code/shelfi/app/views/layouts/application.html.erb",
-		"/home/emanuel/Code/shelfi/app/controllers/sessions_controller.rb",
-		"/home/emanuel/Code/shelfi/app/views/devise/sessions/_new.html.erb",
-		"/home/emanuel/Code/shelfi/app/assets/javascripts/templates/home/home.ejs",
-		"/home/emanuel/Code/shelfi/app/views/devise/sessions/new.html.erb",
-		"/home/emanuel/Code/shelfi/app/views/home/_getyours.html.erb",
-		"/home/emanuel/Code/shelfi/app/controllers/application_controller.rb",
-		"/home/emanuel/Code/shelfi/config/initializers/devise.rb",
-		"/home/emanuel/Code/shelfi/db/migrate/20120808155424_create_user_albums.rb",
-		"/home/emanuel/Code/shelfi/app/views/devise/sessions/_login.html.erb",
-		"/home/emanuel/Code/shelfi/app/views/devise/registrations/_signup.html.erb",
-		"/home/emanuel/Code/shelfi/db/migrate/20120803121746_devise_create_users.rb",
-		"/home/emanuel/Code/shelfi/db/migrate/20120731142451_create_albums.rb",
-		"/home/emanuel/Code/today/app/controllers/home_controller.rb",
-		"/home/emanuel/Code/shelfi/config/database.yml",
-		"/home/emanuel/Code/officiel/Gemfile",
-		"/home/emanuel/Code/today/Gemfile",
-		"/home/emanuel/Code/today/app/assets/javascripts/application.js",
-		"/home/emanuel/Code/officiel/app/assets/javascripts/application.js",
-		"/home/emanuel/Code/suiteup/app/assets/javascripts/application.js",
-		"/home/emanuel/Code/ofm-full-screen/public/javascripts/application.js",
-		"/home/emanuel/Code/shelfi/app/views/home/_home_books.html.erb",
-		"/home/emanuel/Code/today/config/application.rb",
-		"/home/emanuel/Code/today/app/controllers/application_controller.rb",
-		"/home/emanuel/Code/today/app/controllers/items_controller.rb",
-		"/home/emanuel/Code/today/app/controllers/actions_controller.rb",
-		"/home/emanuel/Code/today/app/views/home/index.html.erb",
-		"/home/emanuel/Code/today/config/routes.rb",
-		"/home/emanuel/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 0.0
 	},
 	"find_in_files":
 	{
@@ -321,21 +49,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"extend",
-			"class=\"section",
-			" class=\"content\"",
-			"</p>",
-			"p class=\"super\"",
-			"p class=\"topic\"",
-			"div class=\"topic\"",
-			"\n				",
-			"sub",
-			"head",
-			"process",
-			"on",
-			"/*\n * This is a manifest file that'll be compiled into application.css, which will include all the files\n * listed below.\n *\n * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,\n * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.\n *\n * You're free to add application-wide styles to this file and they'll appear at the top of the\n * compiled file, but it's generally better to create a new file per style scope.\n *\n *= require_self\n *= require_tree .\n*/\nbody{\n	font-family: Arial;\n	background-image: url('https://duv2rxyjq20ja.cloudfront.net/wlcom1/backgrounds/wood.jpg');\n	background-repeat:no-repeat;\n	background-attachment: fixed;\n	font-family:'Helvetica Neue', 'Arial';\n}\n\na{\n	text-decoration:none;\n}\n\nh1 {\n	font-family: Courgette;\n	color:rgba(0,0,0,.7);\n	font-size: 60px;\n	text-align:center;\n}\n\n.pulsate{\n	-webkit-animation: pulsate 2s ease-out;\n    -webkit-animation-iteration-count: infinite; \n}\n\n@-webkit-keyframes pulsate {\n    0% {opacity: 0.7;}\n    50% {opacity: 0.2;}\n    100% {opacity: 0.7;}\n}\n\nh2 {\n	font-family: Courgette;\n	color:rgba(0,0,0,.6);\n	font-size:30px;\n	text-align:center;\n}\n\ndiv#main {\n	width:1200px;\n	margin:0px auto;\n//	border:1px solid black;\n}\n\nul{\n	list-style: none;\n}\n\nul.shelf {\n	padding:0px;\n}\n\nul.shelf li{\n		float:left;\n		width:150px;\n		//height:150px;\n		padding-bottom:25px;\n		margin:0px;\n		text-align:center;\n}\n\ndiv.shelf-item{\n	position: relative;\n	box-shadow: 0px 0px 5px rgba(0, 0, 0, .6);\n	border:1px solid rgba(255, 255, 255, .4);\n	overflow:hidden;\n	color: rgba(0,0,0,0);\n	margin: 0 auto;\n}\n\ndiv.album {\n	width: 126px;\n	height: 126px;\n}\n\ndiv.book {\n	width:98px;\n	height:145px;\n}\n\nimg.sleeve {\n	position:absolute;\n	z-index:-100;\n	top:0;\n	left:0;\n}\ndiv.album img.sleeve{\n	width:126px;\n	height: 126px;\n}\n\ndiv.shelf-item:hover {\n	background-color: rgba(255,255,255,0.6);\n	color: rgba(0,0,0,.9);\n//	-webkit-transform: scale(1.3, 1.3);\n}\n\ndiv.album-name{\n	position:absolute;\n	top:0px;\n	left:0;\n	width:100%;\n	height:40px;\n	overflow: hidden;\n	padding:20px 0px;\n	font-weight: bold;\n	font-size:.8em;\n}\ndiv.artist-name{\n	position:absolute;\n	bottom:20px;\n	left:0;\n	width:100%;\n	font-size:.8em;\n}\n\n.btn {\n	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),0 1px 3px rgba(0, 0, 0, 0.3);\n	border:1px solid #CCC;\n	cursor:pointer;\n	vertical-align: middle;\n\n}\n.primary{\n	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);\n	color: rgba(255, 255, 255, 0.7);\n	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);\n	background-image: -webkit-linear-gradient(top,#2990E0,#1B75BB);\n	font-weight: bold;\n	line-height: normal;\n	font-family:\"Courgette\";\n}\n#home-form{\n	float:right;\n	font-family: \"Courgette\";\n	font-size:23px;\n	color:rgba(0,0,0,.7);\n}\n\n#home-form div{\n	margin-bottom: 10px;\n}\n\n#home-form input[type=text]{\n	width:227px;\n}\n\ninput {\n	padding: 9px 14px;\n	border-radius: 5px;\n	font-size:22px;\n	border:1px solid rgba(0,0,0,.1);\n	background-color: rgba(0,0,0,0)\n}\n\ninput:hover{\n	background-color: rgba(0,0,0,.1)\n}\n\ninput:focus{\n	background: rgba(27, 117, 187, 0.1);\n	border-color: rgba(27, 117, 187, 0.1);\n	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(27, 117, 187, 0.4);\n	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(27,117,187,0.4);\n	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),0 0 8px rgba(27, 117, 187, 0.4);\n}\n\n.fclear{\n	clear:both;\n}",
-			"click",
-			"raise"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -343,11 +56,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"",
-			"</header>",
-			"header",
-			"article",
-			"]) "
 		],
 		"reverse": false,
 		"show_context": true,
@@ -358,310 +66,13 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2252,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1102,
-								1102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/users/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 570,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								133,
-								133
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/assets/javascripts/templates/shelf.jst.ejs",
-					"settings":
-					{
-						"buffer_size": 456,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								367,
-								367
-							]
-						],
-						"settings":
-						{
-							"auto_name": "aaa",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/controllers/users_controller.rb",
-					"settings":
-					{
-						"buffer_size": 672,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								667,
-								667
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 519,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								169,
-								169
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/controllers/albums_controller.rb",
-					"settings":
-					{
-						"buffer_size": 128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								119,
-								119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 6,
-					"file": "app/views/home/_albums.html.erb",
-					"settings":
-					{
-						"buffer_size": 1080,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								425,
-								425
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/assets/stylesheets/application.css",
-					"settings":
-					{
-						"buffer_size": 4967,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "Gemfile",
-					"settings":
-					{
-						"buffer_size": 947,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								658,
-								658
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/assets/javascripts/application.js",
-					"settings":
-					{
-						"buffer_size": 1509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1450,
-								1450
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 357.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/assets/javascripts/user.js",
-					"settings":
-					{
-						"buffer_size": 2508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2146,
-								2146
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 918.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -671,7 +82,7 @@
 	},
 	"input":
 	{
-		"height": 33.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -705,7 +116,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 64.0
+		"height": 0.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -713,18 +124,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"h",
-				"/home/emanuel/Code/shelfi/app/controllers/home_controller.rb"
-			],
-			[
-				"",
-				"untitled"
-			],
-			[
-				"ap",
-				"/home/emanuel/Code/shelfi/app/controllers/application_controller.rb"
-			]
 		],
 		"width": 0.0
 	},
@@ -740,6 +139,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 211.0,
+	"side_bar_width": 150.0,
 	"status_bar_visible": true
 }

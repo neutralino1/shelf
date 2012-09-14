@@ -3,6 +3,7 @@ class UsersController < Devise::RegistrationsController
 		user = User.new(params[:user])
 		if user.save!
 			sign_in(:user, user)
+			user.sync_albums(100)
 			redirect_to root_path
 		else
 			raise "fuck"

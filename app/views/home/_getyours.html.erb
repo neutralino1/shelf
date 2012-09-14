@@ -1,8 +1,6 @@
 <%= form_tag shelf_path, :method => "get", :id => 'get-yours' do %>
 	Enter
 			<%= text_field_tag 'lastfm_username', nil, :placeholder => 'your LastFM username' %>
-	or
-			<%= text_field_tag 'discogs_username', nil, :placeholder => 'your Discogs username' %>
 	and
 		<%= submit_tag "view your record shelf &rarr;".html_safe, :class => "btn primary" %>
 <% end %>

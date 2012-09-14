@@ -41,8 +41,10 @@ $(document).ready(
 			jsonRoot: 'album',
   			urlRoot: '/albums',
   			model_name: 'album',
-			year: "123456",
+			year: 1900,
 			initialize: function(){
+				this.date = new Date(this.get('release_date'));
+				this.year = this.date.getFullYear();
 			}
 		});
 
@@ -51,7 +53,6 @@ $(document).ready(
 			url: '/users/albums',
 			initialize: function (models, options) {
 			},
-			length: function(){ return "fuck";}
 		});
 
 		ShelfView = Backbone.View.extend({
@@ -63,12 +64,20 @@ $(document).ready(
 				this.vent.trigger("loading", this.model);
 				//this.collection.bind('reset', this.render.bind(this));
 				this.collection.on('reset', this.render, this);
+				this.vent.bind('changeOrder', this.changeOrder.bind(this));
 				this.collection.fetch({success: function(){
 					this.vent.trigger("quiet", this.model);
 				}.bind(this)});
 			},
 			render: function(){
 				this.$el.html(this.template({abc: 'abc', albums: this.collection.toJSON()}));
+			},
+			changeOrder: function(){
+				this.collection.comparator = function (album) {
+					console.log(album.get("release_date"));
+  					return album.get("release_date");
+				};
+				this.collection.sort();
 			}
 		});
 
@@ -93,17 +102,17 @@ $(document).ready(
 			events: {
 				'change input[name=order]' : 'changeOrder'
 			},
-			initialize: function(){
-				console.log(2);
+			initialize: function(options){
 				console.log(this.$el);
+				this.vent = options.vent;
 			},
 			changeOrder: function(){
-				console.log(1);
+				this.vent.trigger('changeOrder');
 			}
 		});
 
 		var vent = _.extend({}, Backbone.Events);
 		var logoview = new LogoView({vent: vent});
 		var shelfview = new ShelfView({vent: vent});
-		var settingsview = new SettingsView;
+		var settingsview = new SettingsView({vent: vent});
 	});
